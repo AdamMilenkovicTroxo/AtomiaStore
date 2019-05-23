@@ -731,4 +731,10 @@
   <data name="IdentityNumber" xml:space="preserve">
     <value>Identitetsnummer</value>
   </data>
+  <data name="ExistingCustomerTitle" xml:space="preserve">
+    <value>Befintlig kund</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Lösenord</value>
+  </data>
 </root>

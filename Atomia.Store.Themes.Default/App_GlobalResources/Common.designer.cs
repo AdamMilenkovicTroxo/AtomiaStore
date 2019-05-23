@@ -819,6 +819,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Existing customer.
+        /// </summary>
+        internal static string ExistingCustomerTitle {
+            get {
+                return ResourceManager.GetString("ExistingCustomerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expires.
         /// </summary>
         internal static string Expires {
@@ -1139,6 +1148,15 @@ namespace Resources {
         internal static string OrderPageTitle {
             get {
                 return ResourceManager.GetString("OrderPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         

@@ -1,5 +1,6 @@
 ﻿@using Atomia.Store.AspNetMvc.Models
 @model Atomia.Store.AspNetMvc.Models.DefaultAccountViewModel
+@using Atomia.Store.ExistingCustomer.Models;
 
 @{
     Layout = "~/Themes/Default/Views/_OrderFlowLayout.cshtml";
@@ -11,6 +12,10 @@
 
     <form action="@this.Url.Action("Index", routeValues)" id="Account_Form" method="post" novalidate="novalidate">
     @{
+    @{Html.RenderPartial("_ExistingCustomer", new CustomerLoginModel());}
+
+    @using (Html.BeginForm("Index", "Account", FormMethod.Post, new { id = "Account_Form" }))
+    {
         Html.RenderPartial("_ValidationSummary", ViewData.ModelState);
 
         @Html.AntiForgeryToken();
