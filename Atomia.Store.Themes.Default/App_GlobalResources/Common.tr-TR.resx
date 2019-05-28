@@ -731,4 +731,16 @@
   <data name="Password" xml:space="preserve">
     <value>Parola</value>
   </data>
+  <data name="Existing" xml:space="preserve">
+    <value>Mevcut</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
+  <data name="SelectAccountToContinue" xml:space="preserve">
+    <value>Devam etmek için hesap seçin</value>
+  </data>
+  <data name="InvalidUsernameOrPassword" xml:space="preserve">
+    <value>Geçersiz kullanıcı adı veya şifre</value>
+  </data>
 </root>

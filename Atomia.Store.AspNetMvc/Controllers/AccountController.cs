@@ -36,6 +36,11 @@ namespace Atomia.Store.AspNetMvc.Controllers
                 ViewBag.AddDnsPackage = ConfigurationHelper.GetDnsPackageArticleNumber();
             }
 
+            if (TempData.ContainsKey("ExistingCustomerValidateLoginFailed"))
+            {
+                ModelState.AddModelError("CustomerLogin", TempData["ExistingCustomerValidateLoginFailed"].ToString());
+            }
+
             return View(model);
         }
 

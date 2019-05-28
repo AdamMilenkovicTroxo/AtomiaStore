@@ -12,6 +12,7 @@ namespace Atomia.Store.ExistingCustomer.Controllers
     public sealed class ExistingCustomerController : Controller
     {
         private readonly IContactDataProvider contactDataProvider = DependencyResolver.Current.GetService<IContactDataProvider>();
+        private readonly IResourceProvider resourceProvider = DependencyResolver.Current.GetService<IResourceProvider>();
         private readonly CustomerLoginValidator customerLoginValidator = DependencyResolver.Current.GetService<CustomerLoginValidator>();
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace Atomia.Store.ExistingCustomer.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("customerLogin", "Username or password or both are invalid.");
+                    TempData["ExistingCustomerValidateLoginFailed"] = resourceProvider.GetResource("InvalidUsernameOrPassword");
                 }
             }
 

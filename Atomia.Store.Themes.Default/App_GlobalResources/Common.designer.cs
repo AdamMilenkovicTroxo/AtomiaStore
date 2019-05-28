@@ -819,20 +819,20 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Existing.
+        /// </summary>
+        internal static string Existing {
+            get {
+                return ResourceManager.GetString("Existing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Existing customer.
         /// </summary>
         internal static string ExistingCustomerTitle {
             get {
                 return ResourceManager.GetString("ExistingCustomerTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exiting.
-        /// </summary>
-        internal static string Exiting {
-            get {
-                return ResourceManager.GetString("Exiting", resourceCulture);
             }
         }
         
@@ -977,6 +977,15 @@ namespace Resources {
         internal static string IndividualIdentityNumber {
             get {
                 return ResourceManager.GetString("IndividualIdentityNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid username or password.
+        /// </summary>
+        internal static string InvalidUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("InvalidUsernameOrPassword", resourceCulture);
             }
         }
         
@@ -1396,7 +1405,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select account to continue:.
+        ///   Looks up a localized string similar to Select account to continue.
         /// </summary>
         internal static string SelectAccountToContinue {
             get {
