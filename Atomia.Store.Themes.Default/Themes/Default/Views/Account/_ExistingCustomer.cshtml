@@ -1,12 +1,14 @@
 ﻿@model Atomia.Store.ExistingCustomer.Models.CustomerLoginModel
 
-<!-- ko with: Atomia.VM.existingCustomer -->
+<div style="display: none;" data-bind="slideVisible: customerOrderAccountSelector.existingAccountFormVisible">
+
+    <!-- ko with: Atomia.VM.existingCustomer -->
+
     <h4>@Html.CommonResource("ExistingCustomerTitle")</h4>
-
-    <form action="ExistingCustomer/ValidateLogin?flow=ExistingCustomerFlow" method="post" id="Login_Form">
-        @{Html.RenderPartial("_ValidationSummary", ViewData.ModelState);}
-
-        @Html.AntiForgeryToken()
+    @using (Html.BeginRouteForm("ExistingCustomer", new { action = "ValidateLogin" }, FormMethod.Post, new { id = "Login_Form", novalidate = "novalidate" }))
+    {
+        Html.RenderPartial("_ValidationSummary", ViewData.ModelState);
+        @Html.AntiForgeryToken();
 
         <div class="formrow">
             <h5>
@@ -30,6 +32,9 @@
             <br class="clear">
         </div>
 
-        @{Html.RenderPartial("_Actions", Model);}
-    </form>
-<!-- /ko -->
+        Html.RenderPartial("_Actions", Model);
+    }
+    <!-- /ko -->
+
+</div>
+

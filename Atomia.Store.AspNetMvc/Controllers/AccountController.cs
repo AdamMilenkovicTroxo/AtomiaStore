@@ -1,9 +1,9 @@
-﻿using System.Linq;
+﻿using Atomia.Store.AspNetMvc.Filters;
+using Atomia.Store.AspNetMvc.Helpers;
 using Atomia.Store.AspNetMvc.Models;
 using Atomia.Store.Core;
+using System.Linq;
 using System.Web.Mvc;
-using Atomia.Store.AspNetMvc.Filters;
-using Atomia.Store.AspNetMvc.Helpers;
 
 namespace Atomia.Store.AspNetMvc.Controllers
 {

@@ -746,4 +746,13 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="Exiting" xml:space="preserve">
+    <value>Exiting</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="SelectAccountToContinue" xml:space="preserve">
+    <value>Select account to continue:</value>
+  </data>
 </root>

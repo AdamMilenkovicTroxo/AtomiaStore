@@ -1,5 +1,4 @@
-﻿using System;
-using Atomia.Store.ExistingCustomer.Models;
+﻿using Atomia.Store.ExistingCustomer.Models;
 using Atomia.Web.Plugin.OrderServiceReferences.AtomiaBillingPublicService;
 
 namespace Atomia.Store.ExistingCustomer.Adapters
@@ -22,8 +21,8 @@ namespace Atomia.Store.ExistingCustomer.Adapters
                 Username = username,
                 Password = password,
                 Valid = validationResults.Status == "OK",
-                CustomerNumber = validationResults.CustomerNumber,
-                Country = validationResults.Address.Country.Code
+                CustomerNumber = validationResults.CustomerNumber ?? string.Empty,
+                Country = validationResults.Address?.Country?.Code ?? string.Empty
             };
         }
     }

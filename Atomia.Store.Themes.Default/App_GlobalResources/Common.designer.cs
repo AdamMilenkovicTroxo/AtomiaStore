@@ -828,6 +828,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exiting.
+        /// </summary>
+        internal static string Exiting {
+            get {
+                return ResourceManager.GetString("Exiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expires.
         /// </summary>
         internal static string Expires {
@@ -1067,6 +1076,15 @@ namespace Resources {
         internal static string MoreResults {
             get {
                 return ResourceManager.GetString("MoreResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        internal static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
             }
         }
         
@@ -1374,6 +1392,15 @@ namespace Resources {
         internal static string Select {
             get {
                 return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select account to continue:.
+        /// </summary>
+        internal static string SelectAccountToContinue {
+            get {
+                return ResourceManager.GetString("SelectAccountToContinue", resourceCulture);
             }
         }
         

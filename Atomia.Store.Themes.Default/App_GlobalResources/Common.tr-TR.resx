@@ -725,7 +725,7 @@
   <data name="WarningTitle_HostingPackageMissing" xml:space="preserve">
     <value>Hosting paketi eksik</value>
   </data>
-</root>  <data name="ExistingCustomerTitle" xml:space="preserve">
+  <data name="ExistingCustomerTitle" xml:space="preserve">
     <value>Mevcut müşteri</value>
   </data>
   <data name="Password" xml:space="preserve">

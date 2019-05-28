@@ -1,17 +1,16 @@
+using Atomia.Store.AspNetMvc.Helpers;
 using Atomia.Store.AspNetMvc.Models;
 using Atomia.Store.AspNetMvc.Ports;
 using Atomia.Store.Core;
+using Atomia.Store.ExistingCustomer.Adapters;
 using Atomia.Store.PublicBillingApi;
 using Atomia.Store.PublicBillingApi.Handlers;
-using Atomia.Store.ExistingCustomer.Adapters;
-using Microsoft.Practices.Unity;
-using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Configuration;
-using System;
-
-using Atomia.Web.Plugin.ProductsProvider;
 using Atomia.Web.Plugin.ShopNameProvider;
+using Microsoft.Practices.Unity;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Web.Mvc;
 
 namespace Atomia.Store.Themes.Default
 {
@@ -58,6 +57,7 @@ namespace Atomia.Store.Themes.Default
                 new InjectionConstructor(new ResolvedParameter<ICountryProvider>("apiProvider")));
             container.RegisterType<IResellerProvider, Atomia.Store.PublicBillingApi.Adapters.ResellerProvider>();
             container.RegisterType<ILanguageProvider, Atomia.Store.PublicBillingApi.Adapters.LanguageProvider>();
+            container.RegisterType<IPackageProvider, Atomia.Store.PublicBillingApi.Adapters.PackageProvider>();
             container.RegisterType<ICurrencyProvider, Atomia.Store.PublicBillingApi.Adapters.CurrencyProvider>();
             container.RegisterType<IProductProvider, Atomia.Store.PublicBillingApi.Adapters.ProductProvider>();
             container.RegisterType<IPaymentMethodsProvider, Atomia.Store.PublicBillingApi.Adapters.PaymentMethodsProvider>();
@@ -254,21 +254,15 @@ namespace Atomia.Store.Themes.Default
 
         private static void RegisterExistingCustomerOrdering(UnityContainer container)
         {
-            bool allowExistingCustomerOrders;
-            var allowExistingCustomerOrdersSetting = ConfigurationManager.AppSettings["AllowExistingCustomerOrders"] as String;
-
-            if (!Boolean.TryParse(allowExistingCustomerOrdersSetting, out allowExistingCustomerOrders))
+            if (!ConfigurationHelper.AllowExistingCustomerOrders())
             {
-                throw new ConfigurationErrorsException("Could not parse boolean from 'AllowExistingCustomerOrders' setting or it is missing.");
+                return;
             }
 
-            if (allowExistingCustomerOrders)
-            {
-                // Existing customer adapters
-                container.RegisterType<IContactDataProvider, Atomia.Store.ExistingCustomer.Adapters.CombinedContactProvider>();
-                container.RegisterType<CustomerLoginValidator, Atomia.Store.ExistingCustomer.Adapters.CustomerLoginValidator>();
-                container.RegisterType<OrderCreator, Atomia.Store.ExistingCustomer.Adapters.CombinedOrderCreator>();
-            }
+            // Existing customer adapters
+            container.RegisterType<IContactDataProvider, CombinedContactProvider>();
+            container.RegisterType<CustomerLoginValidator, CustomerLoginValidator>();
+            container.RegisterType<OrderCreator, CombinedOrderCreator>();
         }
     }
 }

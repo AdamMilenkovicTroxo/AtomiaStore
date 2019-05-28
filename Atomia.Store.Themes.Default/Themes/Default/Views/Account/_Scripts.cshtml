@@ -45,6 +45,13 @@
 }
 
 <script type="text/javascript">
+
+    Atomia.VM.customerOrderAccountSelector = new Atomia.ViewModels.CustomerOrderAccountSelectorModel({
+        allowExistingCustomerOrders: @Model.OrderAccountTypeSelector.AllowExistingCustomerOrders.ToString().ToLower(),
+        existingAccountType: '@Model.OrderAccountTypeSelector.ExistingAccountType',
+        newAccountType: '@Model.OrderAccountTypeSelector.NewAccountType',
+    });
+
     Atomia.VM.account = Atomia.Utils.mix(Atomia.ViewModels.AccountModel, Atomia.ViewModels.WhoisModel);
     Atomia.VM.account.otherBillingContact(@Model.OtherBillingContact.ToString().ToLower());
     Atomia.VM.account.otherWhoisContact(@Model.OtherWhoisContact.ToString().ToLower());

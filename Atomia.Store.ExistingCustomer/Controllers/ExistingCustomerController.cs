@@ -1,8 +1,7 @@
-﻿using System.Web.Mvc;
-using Atomia.Store.AspNetMvc.Filters;
+﻿using Atomia.Store.Core;
 using Atomia.Store.ExistingCustomer.Adapters;
 using Atomia.Store.ExistingCustomer.Models;
-using Atomia.Store.Core;
+using System.Web.Mvc;
 
 namespace Atomia.Store.ExistingCustomer.Controllers
 {
@@ -18,7 +17,6 @@ namespace Atomia.Store.ExistingCustomer.Controllers
         /// <summary>
         /// Existing customer validation handler. Redirects to checkout.
         /// </summary>
-        [OrderFlowFilter]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ValidateLogin(CustomerLoginModel model)
@@ -42,7 +40,7 @@ namespace Atomia.Store.ExistingCustomer.Controllers
                 }
             }
 
-            return View(new CustomerLoginModel() { Username = model.Username });
+            return RedirectToAction("Index", "Account");
         }
     }
 }
