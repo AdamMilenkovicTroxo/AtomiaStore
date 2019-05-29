@@ -14,31 +14,15 @@ Atomia.ViewModels = Atomia.ViewModels || {};
         self.existingAccountType = `${model.existingAccountType}AccountTypeId`;
 
         self.selectorVisible = ko.observable(model.allowExistingCustomerOrders);
-        self.selectedAccountType = ko.observable(self.existingAccountType);
+        self.selectedAccountType = ko.observable(self.selectorVisible ? self.existingAccountType : self.newAccountType);
         self.selectorGroupName = 'CustomerOrderAccountType';
 
         self.existingAccountFormVisible = ko.pureComputed(function () {
-
-            if (!self.selectorVisible()) {
-                return false;
-            }
-
-            if (self.selectedAccountType() == self.existingAccountType) {
-                return true;
-            }
-
-            return false;
-
+            return self.selectedAccountType() == self.existingAccountType;
         }, self);
 
         self.newAccountFormVisible = ko.pureComputed(function () {
-
-            if (self.selectedAccountType() == self.newAccountType) {
-                return true;
-            }
-
-            return false;
-
+            return self.selectedAccountType() == self.newAccountType;
         }, self);
 
     }
