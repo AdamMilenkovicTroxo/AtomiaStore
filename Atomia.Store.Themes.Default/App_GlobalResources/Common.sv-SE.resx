@@ -749,4 +749,7 @@
   <data name="InvalidUsernameOrPassword" xml:space="preserve">
     <value>Ogiltigt användarnamn eller lösenord</value>
   </data>
+  <data name="CustomerLogin" xml:space="preserve">
+    <value>Logga in</value>
+  </data>
 </root>

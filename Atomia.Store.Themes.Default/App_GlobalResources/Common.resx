@@ -758,4 +758,7 @@
   <data name="InvalidUsernameOrPassword" xml:space="preserve">
     <value>Invalid username or password</value>
   </data>
+  <data name="CustomerLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
 </root>

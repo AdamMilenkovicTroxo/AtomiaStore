@@ -495,6 +495,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string CustomerLogin {
+            get {
+                return ResourceManager.GetString("CustomerLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer type.
         /// </summary>
         internal static string CustomerType {

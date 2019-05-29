@@ -743,4 +743,7 @@
   <data name="InvalidUsernameOrPassword" xml:space="preserve">
     <value>Geçersiz kullanıcı adı veya şifre</value>
   </data>
+  <data name="CustomerLogin" xml:space="preserve">
+    <value>Oturum aç</value>
+  </data>
 </root>
